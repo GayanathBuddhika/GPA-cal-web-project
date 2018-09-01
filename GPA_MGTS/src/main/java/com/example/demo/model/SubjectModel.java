@@ -12,16 +12,17 @@ public class SubjectModel {
 	public SubjectModel() {
 		
 	}
-	
-	
-	
 	public SubjectModel(String sbject_code_num, String subject_name) {
 		super();
 		this.sbject_code_num = sbject_code_num;
 		this.subject_name = subject_name;
+		
 	}
-	
-	
+
+
+
+
+
 	public String getSbject_code_num() {
 		return sbject_code_num;
 	}
@@ -34,6 +35,7 @@ public class SubjectModel {
 	public void setSubject_name(String subject_name) {
 		this.subject_name = subject_name;
 	}
+	
 	
 	
 

@@ -1,41 +1,56 @@
 package com.example.demo.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class DigreeProgramSubjectModel {
 	@Id
-	private String digpro_num;
 	private String subject_code;
 	private String year;
 	private Integer sem;
 	private Integer credit;
+	@ManyToOne
+	@JoinColumn(name="digree_num")
+	private DigreeProgramModel digreeProgaram;
+	@OneToMany(mappedBy="degreeProgramSubject")
+	private List<StudentMarkModel> studentMarke=new ArrayList<>();
 	
 	public DigreeProgramSubjectModel() {
 		
 	}
 	
 	
-	public DigreeProgramSubjectModel(String digpro_num, String subject_code, String year, Integer sem, Integer credit) {
+	
+	public DigreeProgramSubjectModel(String year, Integer sem, Integer credit, DigreeProgramModel digreeProgaram,
+			 List<StudentMarkModel> studentMarke) {
 		super();
-		this.digpro_num = digpro_num;
-		this.subject_code = subject_code;
 		this.year = year;
 		this.sem = sem;
 		this.credit = credit;
+		this.digreeProgaram = digreeProgaram;
+		this.studentMarke = studentMarke;
 	}
-	public String getDigpro_num() {
-		return digpro_num;
+
+
+
+	public DigreeProgramModel getDigreeProgaram() {
+		return digreeProgaram;
 	}
-	public void setDigpro_num(String digpro_num) {
-		this.digpro_num = digpro_num;
+	public void setDigreeProgaram(DigreeProgramModel digreeProgaram) {
+		this.digreeProgaram = digreeProgaram;
 	}
-	public String getSubject_code() {
-		return subject_code;
+	public List<StudentMarkModel> getStudentMarke() {
+		return studentMarke;
 	}
-	public void setSubject_code(String subject_code) {
-		this.subject_code = subject_code;
+	public void setStudentMarke(List<StudentMarkModel> studentMarke) {
+		this.studentMarke = studentMarke;
 	}
 	public String getYear() {
 		return year;

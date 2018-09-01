@@ -1,9 +1,15 @@
 package com.example.demo.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class DigreeProgramModel {
@@ -11,18 +17,29 @@ public class DigreeProgramModel {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String digpro_num;
 	private String digpro_name;
-	private Integer dep_num;
+	@ManyToOne
+	@JoinColumn(name="dep_num")
+	private DepartmentModel department;
+	@OneToMany(mappedBy="digreeProgaram")
+	private List<DigreeProgramSubjectModel> digreeProgrameSubject =new ArrayList<>();
 	
 	public DigreeProgramModel() {
 		
 	}
 	
-	public DigreeProgramModel(String digpro_num, String digpro_name, Integer dep_num) {		
+	
+
+	public DigreeProgramModel(String digpro_num, String digpro_name, DepartmentModel department,
+			List<DigreeProgramSubjectModel> digreeProgrameSubject) {
+		super();
 		this.digpro_num = digpro_num;
 		this.digpro_name = digpro_name;
-		this.dep_num = dep_num;
+		this.department = department;
+		this.digreeProgrameSubject = digreeProgrameSubject;
 	}
-	
+
+
+
 	public String getDigpro_num() {
 		return digpro_num;
 	}
@@ -35,12 +52,29 @@ public class DigreeProgramModel {
 	public void setDigpro_name(String digpro_name) {
 		this.digpro_name = digpro_name;
 	}
-	public Integer getDep_num() {
-		return dep_num;
+
+
+	public DepartmentModel getDepartment() {
+		return department;
 	}
-	public void setDep_num(Integer dep_num) {
-		this.dep_num = dep_num;
+
+
+	public void setDepartment(DepartmentModel department) {
+		this.department = department;
 	}
+
+
+
+	public List<DigreeProgramSubjectModel> getDigreeProgrameSubject() {
+		return digreeProgrameSubject;
+	}
+
+
+
+	public void setDigreeProgrameSubject(List<DigreeProgramSubjectModel> digreeProgrameSubject) {
+		this.digreeProgrameSubject = digreeProgrameSubject;
+	}
+	
 	
 	
 
