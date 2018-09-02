@@ -1,3 +1,5 @@
 1535894080066	Rename type 'StudentMarkModel'
 1535898414289	Rename type 'StudentEpnumberModel'
 1535899331948	Rename type 'SubjectStudentModel'
+1535913163171	Rename type 'MainController'
+1535913846986	Rename type 'facultyService'
