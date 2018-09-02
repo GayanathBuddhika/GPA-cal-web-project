@@ -21,7 +21,7 @@ public class DigreeProgramSubjectModel {
 	@JoinColumn(name="digree_num")
 	private DigreeProgramModel digreeProgaram;
 	@OneToMany(mappedBy="degreeProgramSubject")
-	private List<StudentSubjectModel> studentMarke=new ArrayList<>();
+	private List<StudentMarkModel> studentMarke=new ArrayList<>();
 	
 	public DigreeProgramSubjectModel() {
 		
@@ -33,7 +33,7 @@ public class DigreeProgramSubjectModel {
 
 
 	public DigreeProgramSubjectModel(String subject_code, String subject_name, String year, Integer sem, Integer credit,
-			DigreeProgramModel digreeProgaram, List<StudentSubjectModel> studentMarke) {
+			DigreeProgramModel digreeProgaram, List<StudentMarkModel> studentMarke) {
 		super();
 		this.subject_code = subject_code;
 		this.subject_name = subject_name;
@@ -55,10 +55,10 @@ public class DigreeProgramSubjectModel {
 	public void setDigreeProgaram(DigreeProgramModel digreeProgaram) {
 		this.digreeProgaram = digreeProgaram;
 	}
-	public List<StudentSubjectModel> getStudentMarke() {
+	public List<StudentMarkModel> getStudentMarke() {
 		return studentMarke;
 	}
-	public void setStudentMarke(List<StudentSubjectModel> studentMarke) {
+	public void setStudentMarke(List<StudentMarkModel> studentMarke) {
 		this.studentMarke = studentMarke;
 	}
 	public String getYear() {

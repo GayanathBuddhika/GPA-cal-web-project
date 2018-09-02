@@ -14,11 +14,10 @@ import javax.persistence.OneToMany;
 @Entity
 public class UserModel {
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer user_id;
 	private String  user_name;
 	private String user_email;
-	private String contact_num;
-	private String password;
 	@ManyToOne
 	@JoinColumn(name="ep_num")
 	private StudentModel student;
@@ -28,23 +27,15 @@ public class UserModel {
 	public UserModel() {}
 	
 
-
-
-
-	public UserModel(Integer user_id, String user_name, String user_email, String contact_num, String password,
-			StudentModel student, List<UserRoleModel> userRole) {
+	public UserModel(Integer user_id, String user_name, String user_email, StudentModel student,
+			List<UserRoleModel> userRole) {
 		super();
 		this.user_id = user_id;
 		this.user_name = user_name;
 		this.user_email = user_email;
-		this.contact_num = contact_num;
-		this.password = password;
 		this.student = student;
 		this.userRole = userRole;
 	}
-
-
-
 
 
 	public Integer getUser_id() {
@@ -76,18 +67,6 @@ public class UserModel {
 	}
 	public void setUserRole(List<UserRoleModel> userRole) {
 		this.userRole = userRole;
-	}
-	public String getContact_num() {
-		return contact_num;
-	}
-	public void setContact_num(String contact_num) {
-		this.contact_num = contact_num;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
 	}
    
 

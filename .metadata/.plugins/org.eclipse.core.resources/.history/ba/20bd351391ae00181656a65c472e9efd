@@ -13,7 +13,6 @@ import javax.persistence.OneToMany;
 public class DigreeProgramSubjectModel {
 	@Id
 	private String subject_code;
-	private String subject_name;
 	private String year;
 	private Integer sem;
 	private Integer credit;
@@ -21,7 +20,7 @@ public class DigreeProgramSubjectModel {
 	@JoinColumn(name="digree_num")
 	private DigreeProgramModel digreeProgaram;
 	@OneToMany(mappedBy="degreeProgramSubject")
-	private List<StudentSubjectModel> studentMarke=new ArrayList<>();
+	private List<StudentMarkModel> studentMarke=new ArrayList<>();
 	
 	public DigreeProgramSubjectModel() {
 		
@@ -29,14 +28,9 @@ public class DigreeProgramSubjectModel {
 	
 	
 	
-	
-
-
-	public DigreeProgramSubjectModel(String subject_code, String subject_name, String year, Integer sem, Integer credit,
-			DigreeProgramModel digreeProgaram, List<StudentSubjectModel> studentMarke) {
+	public DigreeProgramSubjectModel(String year, Integer sem, Integer credit, DigreeProgramModel digreeProgaram,
+			 List<StudentMarkModel> studentMarke) {
 		super();
-		this.subject_code = subject_code;
-		this.subject_name = subject_name;
 		this.year = year;
 		this.sem = sem;
 		this.credit = credit;
@@ -46,19 +40,16 @@ public class DigreeProgramSubjectModel {
 
 
 
-
-
-
 	public DigreeProgramModel getDigreeProgaram() {
 		return digreeProgaram;
 	}
 	public void setDigreeProgaram(DigreeProgramModel digreeProgaram) {
 		this.digreeProgaram = digreeProgaram;
 	}
-	public List<StudentSubjectModel> getStudentMarke() {
+	public List<StudentMarkModel> getStudentMarke() {
 		return studentMarke;
 	}
-	public void setStudentMarke(List<StudentSubjectModel> studentMarke) {
+	public void setStudentMarke(List<StudentMarkModel> studentMarke) {
 		this.studentMarke = studentMarke;
 	}
 	public String getYear() {
@@ -79,18 +70,7 @@ public class DigreeProgramSubjectModel {
 	public void setCredit(Integer credit) {
 		this.credit = credit;
 	}
-	public String getSubject_code() {
-		return subject_code;
-	}
-	public void setSubject_code(String subject_code) {
-		this.subject_code = subject_code;
-	}
-	public String getSubject_name() {
-		return subject_name;
-	}
-	public void setSubject_name(String subject_name) {
-		this.subject_name = subject_name;
-	}
 	
 	
+
 }

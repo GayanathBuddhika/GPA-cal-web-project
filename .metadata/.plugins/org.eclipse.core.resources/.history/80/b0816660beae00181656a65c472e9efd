@@ -1,0 +1,56 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class SubjectStudentModel {
+	@Id
+	private Integer studentMarkId;
+	@ManyToOne
+	@JoinColumn(name="subject_code")
+	private DigreeProgramSubjectModel degreeProgramSubject;
+	@ManyToOne
+	@JoinColumn(name="ep_num")
+	private StudentModel student;
+	
+	public SubjectStudentModel() {
+		
+	}
+	
+	
+	
+	public SubjectStudentModel(Integer studentMarkId, DigreeProgramSubjectModel degreeProgramSubject, StudentModel student,
+			String grade_mark, double grade_point) {
+		super();
+		this.studentMarkId = studentMarkId;
+		this.degreeProgramSubject = degreeProgramSubject;
+		this.student = student;
+		
+	}
+
+
+
+	
+	public Integer getStudentMarkId() {
+		return studentMarkId;
+	}
+	public void setStudentMarkId(Integer studentMarkId) {
+		this.studentMarkId = studentMarkId;
+	}
+	public DigreeProgramSubjectModel getDegreeProgramSubject() {
+		return degreeProgramSubject;
+	}
+	public void setDegreeProgramSubject(DigreeProgramSubjectModel degreeProgramSubject) {
+		this.degreeProgramSubject = degreeProgramSubject;
+	}
+	public StudentModel getStudent() {
+		return student;
+	}
+	public void setStudent(StudentModel student) {
+		this.student = student;
+	}
+	
+}

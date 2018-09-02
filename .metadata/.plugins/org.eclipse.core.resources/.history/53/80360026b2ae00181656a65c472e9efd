@@ -13,7 +13,7 @@ public class StudentModel {
 	private String ep_num;
 	private double gpa;
 	@OneToMany(mappedBy="student")
-	private List<StudentSubjectModel> studentMark=new ArrayList<>();
+	private List<StudentMarkModel> studentMark=new ArrayList<>();
 	@OneToMany(mappedBy="student")
 	private List<UserModel> user=new ArrayList<>();
 	
@@ -22,7 +22,7 @@ public class StudentModel {
 	
 	
 	
-	public StudentModel(String ep_num, double gpa, List<StudentSubjectModel> studentMark, List<UserModel> user) {
+	public StudentModel(String ep_num, double gpa, List<StudentMarkModel> studentMark, List<UserModel> user) {
 		super();
 		this.ep_num = ep_num;
 		this.gpa = gpa;
@@ -31,10 +31,10 @@ public class StudentModel {
 	}
 
 
-	public List<StudentSubjectModel> getStudentMark() {
+	public List<StudentMarkModel> getStudentMark() {
 		return studentMark;
 	}
-	public void setStudentMark(List<StudentSubjectModel> studentMark) {
+	public void setStudentMark(List<StudentMarkModel> studentMark) {
 		this.studentMark = studentMark;
 	}
 	public List<UserModel> getUser() {

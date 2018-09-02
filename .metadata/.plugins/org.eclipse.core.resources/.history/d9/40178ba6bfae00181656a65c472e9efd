@@ -1,0 +1,18 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+@Entity
+public class MarkModel {
+	@Id
+	private Integer markId;
+	private String grade;
+	private double mark;
+	@OneToOne
+	@JoinColumn(name="student_of_subject_id")
+	private StudentSubjectModel studentOfSubject;
+
+}
