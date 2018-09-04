@@ -11,35 +11,44 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class DigreeProgramModel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
 	private String digpro_num;
 	private String digpro_name;
 	@ManyToOne
 	@JoinColumn(name="dep_num")
 	private DepartmentModel department;
 	@OneToMany(mappedBy="digreeProgaram")
-	private List<DigreeProgramSubjectModel> digreeProgrameSubject =new ArrayList<>();
+	@JsonIgnore
+	private List<Subject> subject =new ArrayList<>();
 	
 	public DigreeProgramModel() {
 		
 	}
 	
 	
-
-	public DigreeProgramModel(String digpro_num, String digpro_name, DepartmentModel department,
-			List<DigreeProgramSubjectModel> digreeProgrameSubject) {
+	public DigreeProgramModel(Integer id, String digpro_num, String digpro_name, DepartmentModel department,
+			List<Subject> subject) {
 		super();
+		this.id = id;
 		this.digpro_num = digpro_num;
 		this.digpro_name = digpro_name;
 		this.department = department;
-		this.digreeProgrameSubject = digreeProgrameSubject;
+		this.subject = subject;
 	}
 
 
-
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public String getDigpro_num() {
 		return digpro_num;
 	}
@@ -64,16 +73,17 @@ public class DigreeProgramModel {
 	}
 
 
+	public List<Subject> getSubject() {
+		return subject;
+	}
 
-	public List<DigreeProgramSubjectModel> getDigreeProgrameSubject() {
-		return digreeProgrameSubject;
+
+	public void setSubject(List<Subject> subject) {
+		this.subject = subject;
 	}
 
 
 
-	public void setDigreeProgrameSubject(List<DigreeProgramSubjectModel> digreeProgrameSubject) {
-		this.digreeProgrameSubject = digreeProgrameSubject;
-	}
 	
 	
 	

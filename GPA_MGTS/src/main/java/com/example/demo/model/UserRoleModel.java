@@ -1,6 +1,8 @@
 package com.example.demo.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -8,7 +10,8 @@ import javax.persistence.ManyToOne;
 @Entity
 public class UserRoleModel {
 	@Id
-	private Integer user_role_num;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private UserModel user;
@@ -19,22 +22,22 @@ public class UserRoleModel {
 	
 	public UserRoleModel() {}
 	
-	
-	public UserRoleModel(Integer user_role_num, UserModel user, RoleModel role) {
+	public UserRoleModel(Integer id, UserModel user, RoleModel role) {
 		super();
-		this.user_role_num = user_role_num;
+		this.id = id;
 		this.user = user;
 		this.role = role;
 	}
 
-
-
-	public Integer getUser_role_num() {
-		return user_role_num;
+	
+	public Integer getId() {
+		return id;
 	}
-	public void setUser_role_num(Integer user_role_num) {
-		this.user_role_num = user_role_num;
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
+
 	public UserModel getUser() {
 		return user;
 	}

@@ -1,0 +1,9 @@
+package com.example.demo.service;
+
+import com.example.demo.model.Year;
+
+public interface YearService {
+
+	Iterable<Year> getYear(Integer id);
+ 
+}

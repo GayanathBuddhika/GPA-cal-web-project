@@ -10,14 +10,17 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class FacultyModel {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer faculty_num;
+	private Integer id;
 	private String faculty_name;
 	@OneToMany(mappedBy="faculty")
+	@JsonIgnore
 	private List<DepartmentModel> department=new ArrayList<>();
 	
 	public FacultyModel() {
@@ -26,17 +29,18 @@ public class FacultyModel {
 
 	
 	
-	public FacultyModel(Integer faculty_num, String faculty_name, List<DepartmentModel> department) {
+	public FacultyModel(Integer id, String faculty_name, List<DepartmentModel> department) {
 		super();
-		this.faculty_num = faculty_num;
+		this.id = id;
 		this.faculty_name = faculty_name;
 		this.department = department;
 	}
-	public Integer getFaculty_num() {
-		return faculty_num;
+	
+	public Integer getId() {
+		return id;
 	}
-	public void setFaculty_num(Integer faculty_num) {
-		this.faculty_num = faculty_num;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getFaculty_name() {
 		return faculty_name;
@@ -47,7 +51,6 @@ public class FacultyModel {
 	public List<DepartmentModel> getDepartment() {
 		return department;
 	}
-
 
 	public void setDepartment(List<DepartmentModel> department) {
 		this.department = department;

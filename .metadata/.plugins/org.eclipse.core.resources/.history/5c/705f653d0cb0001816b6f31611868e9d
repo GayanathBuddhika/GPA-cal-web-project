@@ -1,0 +1,8 @@
+package com.example.demo.service;
+
+import com.example.demo.repository.SubjectRepository;
+
+public class SubjectServiceImpl implements SubjectService {
+
+	private SubjectRepository digreeprogramSubjectRepository;
+}

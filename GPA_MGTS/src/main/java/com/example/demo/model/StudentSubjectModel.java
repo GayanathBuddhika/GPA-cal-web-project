@@ -1,6 +1,8 @@
 package com.example.demo.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -9,10 +11,11 @@ import javax.persistence.OneToOne;
 @Entity
 public class StudentSubjectModel {
 	@Id
-	private Integer studentSubjectId;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
 	@ManyToOne
 	@JoinColumn(name="subject_code")
-	private DigreeProgramSubjectModel degreeProgramSubject;
+	private Subject subject;
 	@ManyToOne
 	@JoinColumn(name="ep_num")
 	private StudentModel student;
@@ -23,35 +26,39 @@ public class StudentSubjectModel {
 		
 	}
 	
-		
-     public StudentSubjectModel(Integer studentSubjectId, DigreeProgramSubjectModel degreeProgramSubject,
-			StudentModel student, MarkModel mark) {
+	public StudentSubjectModel(Integer id, Subject degreeProgramSubject, StudentModel student,
+			MarkModel mark) {
 		super();
-		this.studentSubjectId = studentSubjectId;
-		this.degreeProgramSubject = degreeProgramSubject;
+		this.id = id;
+		this.subject = subject;
 		this.student = student;
 		this.mark = mark;
 	}
 
+	
+	public Subject getSubject() {
+		return subject;
+	}
 
-	public DigreeProgramSubjectModel getDegreeProgramSubject() {
-		return degreeProgramSubject;
+	public void setSubject(Subject subject) {
+		this.subject = subject;
 	}
-	public void setDegreeProgramSubject(DigreeProgramSubjectModel degreeProgramSubject) {
-		this.degreeProgramSubject = degreeProgramSubject;
-	}
+
 	public StudentModel getStudent() {
 		return student;
 	}
 	public void setStudent(StudentModel student) {
 		this.student = student;
 	}
-	public Integer getStudentSubjectId() {
-		return studentSubjectId;
+	
+	public Integer getId() {
+		return id;
 	}
-	public void setStudentSubjectId(Integer studentSubjectId) {
-		this.studentSubjectId = studentSubjectId;
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
+
 	public MarkModel getMark() {
 		return mark;
 	}

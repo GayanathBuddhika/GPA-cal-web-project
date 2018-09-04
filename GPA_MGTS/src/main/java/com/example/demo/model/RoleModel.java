@@ -13,7 +13,7 @@ public class RoleModel {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer role_Id;
+	private Integer id;
 	private String role_type;
 	@OneToMany(mappedBy="role")
 	private List<UserRoleModel> userRole;
@@ -23,21 +23,21 @@ public class RoleModel {
 		
 	}
 
-	
-	
-	public RoleModel(Integer role_Id, String role_type, List<UserRoleModel> userRole) {
+	public RoleModel(Integer id, String role_type, List<UserRoleModel> userRole) {
 		super();
-		this.role_Id = role_Id;
+		this.id = id;
 		this.role_type = role_type;
 		this.userRole = userRole;
 	}
 
-	public Integer getRole_Id() {
-		return role_Id;
+	public Integer getId() {
+		return id;
 	}
-	public void setRole_Id(Integer role_Id) {
-		this.role_Id = role_Id;
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
+
 	public List<UserRoleModel> getUserRole() {
 		return userRole;
 	}

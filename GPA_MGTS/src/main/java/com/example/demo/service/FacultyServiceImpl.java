@@ -15,11 +15,8 @@ public class FacultyServiceImpl implements FacultyService{
 	private FacultyRepository facultyRepository;
 	
 	@Override
-	public List<FacultyModel> getAllFaculty() {
-		List<FacultyModel> faculty= new ArrayList<>();
-	    facultyRepository.findAll().forEach(faculty::add);
-		return faculty;
-		
+	public Iterable<FacultyModel> getAllFaculty() {
+	    return facultyRepository.findAll();
 	}
  
 }

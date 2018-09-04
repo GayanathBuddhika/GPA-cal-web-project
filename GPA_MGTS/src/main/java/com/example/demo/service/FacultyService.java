@@ -6,6 +6,6 @@ import com.example.demo.model.FacultyModel;
 
 public interface FacultyService {
 
-	public List<FacultyModel> getAllFaculty();
+	public Iterable<FacultyModel> getAllFaculty();
 
 }

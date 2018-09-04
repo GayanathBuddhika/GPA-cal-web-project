@@ -1,0 +1,15 @@
+package com.example.demo.service;
+
+import com.example.demo.model.Subject;
+import com.example.demo.repository.SubjectRepository;
+
+public class SubjectServiceImpl implements SubjectService {
+
+	private SubjectRepository subjectRepository;
+
+	@Override
+	public Iterable<Subject> getSubjects(Integer did, Integer yid, Integer sid) {
+		// TODO Auto-generated method stub
+		return subjectRepository.findByDigreeProgaramIdAndYearIdAndSemId(did, yid, sid);
+	}
+}

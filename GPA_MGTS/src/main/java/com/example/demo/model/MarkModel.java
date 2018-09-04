@@ -8,7 +8,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class MarkModel {
 	@Id
-	private Integer markId;
+	private Integer id;
 	private String grade;
 	private double mark;
 	@OneToOne
@@ -18,20 +18,20 @@ public class MarkModel {
 	public MarkModel() {}
 
 	
-	public MarkModel(Integer markId, String grade, double mark, StudentSubjectModel studentOfSubject) {
+	public MarkModel(Integer id, String grade, double mark, StudentSubjectModel studentOfSubject) {
 		super();
-		this.markId = markId;
+		this.id = id;
 		this.grade = grade;
 		this.mark = mark;
 		this.studentOfSubject = studentOfSubject;
 	}
 
 
-	public Integer getMarkId() {
-		return markId;
+	public Integer getId() {
+		return id;
 	}
-	public void setMarkId(Integer markId) {
-		this.markId = markId;
+	public void setid(Integer id) {
+		this.id = id;
 	}
 	public String getGrade() {
 		return grade;

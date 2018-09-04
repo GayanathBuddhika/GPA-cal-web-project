@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
 public class StudentModel {
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
 	private String ep_num;
 	private double gpa;
 	@OneToMany(mappedBy="student")
@@ -20,14 +24,24 @@ public class StudentModel {
 	public StudentModel() {}
 	
 	
-	
-	
-	public StudentModel(String ep_num, double gpa, List<StudentSubjectModel> studentMark, List<UserModel> user) {
+	public StudentModel(Integer id, String ep_num, double gpa, List<StudentSubjectModel> studentMark,
+			List<UserModel> user) {
 		super();
+		this.id = id;
 		this.ep_num = ep_num;
 		this.gpa = gpa;
 		this.studentMark = studentMark;
 		this.user = user;
+	}
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 

@@ -1,0 +1,8 @@
+package com.example.demo.service;
+
+import com.example.demo.repository.DigreeprogramSubjectRepository;
+
+public class DigreeProgramSubjectServiceImpl implements DigreeProgramSubjectService {
+
+	private DigreeprogramSubjectRepository digreeprogramSubjectRepository;
+}

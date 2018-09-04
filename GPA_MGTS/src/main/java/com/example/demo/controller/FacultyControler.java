@@ -18,9 +18,10 @@ public class FacultyControler {
 	private FacultyService facultyService;
 	
 	@GetMapping("/all")
-	public List<FacultyModel> getFaculty() {
+	public Iterable<FacultyModel> getFaculty() {
 		return facultyService.getAllFaculty();
 		
 	}
-
+   
+	
 }

@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.example.demo.model.FacultyModel;
 
-public interface FacultyRepository extends CrudRepository<FacultyModel, Integer>{
+public interface FacultyRepository extends JpaRepository<FacultyModel, Integer>{
 
 }

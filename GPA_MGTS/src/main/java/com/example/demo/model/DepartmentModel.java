@@ -11,45 +11,42 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class DepartmentModel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private String dep_num;
+	private Integer id;
 	private String dep_name;
 	@ManyToOne
 	@JoinColumn(name="faculy_num")
 	private FacultyModel faculty;
 	@OneToMany(mappedBy="department")
+	@JsonIgnore
 	private List<DigreeProgramModel> digreeProgram =new ArrayList<>();
 	
 	public DepartmentModel() {
 		
 	}
 	
-	
-	
-
-
-	public DepartmentModel(String dep_num, String dep_name, FacultyModel faculty,
-			List<DigreeProgramModel> digreeProgram) {
+	public DepartmentModel(Integer id, String dep_name, FacultyModel faculty, List<DigreeProgramModel> digreeProgram) {
 		super();
-		this.dep_num = dep_num;
+		this.id = id;
 		this.dep_name = dep_name;
 		this.faculty = faculty;
 		this.digreeProgram = digreeProgram;
 	}
 
 
-
-
-
-	public String getDep_num() {
-		return dep_num;
+	public Integer getId() {
+		return id;
 	}
-	public void setDep_num(String dep_num) {
-		this.dep_num = dep_num;
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
+
 	public String getDep_name() {
 		return dep_name;
 	}
