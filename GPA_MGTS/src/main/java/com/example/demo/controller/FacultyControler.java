@@ -12,12 +12,12 @@ import com.example.demo.model.FacultyModel;
 import com.example.demo.service.FacultyService;
 
 @RestController
-@RequestMapping("/faculty")
+@RequestMapping("/api")
 public class FacultyControler {
 	@Autowired
 	private FacultyService facultyService;
 	
-	@GetMapping("/all")
+	@GetMapping("/faculties")
 	public Iterable<FacultyModel> getFaculty() {
 		return facultyService.getAllFaculty();
 		

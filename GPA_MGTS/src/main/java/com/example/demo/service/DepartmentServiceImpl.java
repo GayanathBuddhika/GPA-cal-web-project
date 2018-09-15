@@ -15,4 +15,11 @@ public class DepartmentServiceImpl implements DepartmentService {
 		
 		return departmentRepository.findByFacultyId(id);
 	}
+
+	@Override
+	public String saveDepartment(DepartmentModel dep) {
+		// TODO Auto-generated method stub
+		departmentRepository.save(dep);
+		return "add dep";
+	}
 }

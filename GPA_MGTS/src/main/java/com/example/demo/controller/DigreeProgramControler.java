@@ -12,7 +12,7 @@ import com.example.demo.service.DigreeProgramService;
 public class DigreeProgramControler {
 	@Autowired
 	private DigreeProgramService digreeProgramService;
-    @GetMapping("/department/{id}/digreeProgram")
+    @GetMapping("/api/degreeprograms/{id}")
 	public Iterable<DigreeProgramModel> getDigreeprogram(@PathVariable Integer id){
 		
 		return digreeProgramService.getDigreeprogram(id);

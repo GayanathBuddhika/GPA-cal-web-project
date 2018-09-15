@@ -1,0 +1,6 @@
+package com.example.demo.service;
+
+public interface MarkeService {
+
+	public String addMark(MarkModel mark);
+}

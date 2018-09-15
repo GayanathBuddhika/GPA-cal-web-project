@@ -1,0 +1,20 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.DigreeProgramModel;
+import com.example.demo.service.DigreeProgramService;
+
+@RestController
+public class DigreeProgramControler {
+	@Autowired
+	private DigreeProgramService digreeProgramService;
+    @GetMapping("/department/{id}/digreeProgram")
+	public Iterable<DigreeProgramModel> getDigreeprogram(@PathVariable Integer id){
+		
+		return digreeProgramService.getDigreeprogram(id);
+	}
+}
