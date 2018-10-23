@@ -13,12 +13,12 @@ public class StudentSubjectControler {
     @Autowired
 	private StudentSubjectService studentSubjectService;
     
-    @GetMapping("/subject/{epnum}")
-    public Iterable<StudentSubjectModel> getSubject(@PathVariable String epnum){
-    	
-    	return studentSubjectService.getSubject(epnum);
-    	
-    }
+//    @GetMapping("/subject/{epnum}")
+//    public Iterable<StudentSubjectModel> getSubject(@PathVariable String epnum){
+//    	
+//    	return studentSubjectService.getSubject(epnum);
+//    	
+//    }
     @GetMapping("/subject/(subjectcode)")
     public Iterable<StudentSubjectModel> getEpnum(@PathVariable Integer subjectcode){
     	

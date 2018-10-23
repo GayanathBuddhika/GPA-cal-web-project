@@ -18,12 +18,12 @@ public class DigreeProgramModel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
-	private String digpro_num;
+	
 	private String digpro_name;
 	@ManyToOne
 	@JoinColumn(name="dep_num")
 	private DepartmentModel department;
-	@OneToMany(mappedBy="digreeProgaram")
+	@OneToMany(mappedBy="digreeProgram")
 	@JsonIgnore
 	private List<Subject> subject =new ArrayList<>();
 	
@@ -32,11 +32,11 @@ public class DigreeProgramModel {
 	}
 	
 	
-	public DigreeProgramModel(Integer id, String digpro_num, String digpro_name, DepartmentModel department,
+	public DigreeProgramModel(Integer id, String digpro_name, DepartmentModel department,
 			List<Subject> subject) {
 		super();
 		this.id = id;
-		this.digpro_num = digpro_num;
+		
 		this.digpro_name = digpro_name;
 		this.department = department;
 		this.subject = subject;
@@ -48,12 +48,6 @@ public class DigreeProgramModel {
 	}
 	public void setId(Integer id) {
 		this.id = id;
-	}
-	public String getDigpro_num() {
-		return digpro_num;
-	}
-	public void setDigpro_num(String digpro_num) {
-		this.digpro_num = digpro_num;
 	}
 	public String getDigpro_name() {
 		return digpro_name;

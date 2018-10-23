@@ -10,9 +10,12 @@ public class SubjectServiceImpl implements SubjectService {
     @Autowired
 	private SubjectRepository subjectRepository;
 
-	@Override
-	public Iterable<Subject> getSubjects(Integer did, Integer yid, Integer sid) {
-		// TODO Auto-generated method stub
-		return subjectRepository.findByDigreeProgaramIdAndYearIdAndSemId(did, yid, sid);
-	}
+//	@Override
+//	public Iterable<Subject> getSubjects(Integer did, Integer yid, Integer sid) {
+//		// TODO Auto-generated method stub
+//		return subjectRepository.findByDigreeProgaramIdAndYearIdAndSemId(did, yid, sid);
+//	}
+    public Iterable<Subject> addSubjects(Iterable<Subject> subject){
+    	return subjectRepository.saveAll(subject);
+    }
 }

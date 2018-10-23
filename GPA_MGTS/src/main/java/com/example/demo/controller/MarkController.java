@@ -11,8 +11,9 @@ import com.example.demo.service.MarkeService;
 public class MarkController {
    @Autowired
 	private MarkeService markeService;
-	@PostMapping("/addMarks")
-	public String addMark(@RequestBody Iterable<MarkModel> marks) {
+	@PostMapping("/api/addMarks")
+	public Iterable<MarkModel> addMark(@RequestBody Iterable<MarkModel> marks) {
+		System.out.println("this is mark controller");
 		return markeService.addMark(marks);
 		
 	}

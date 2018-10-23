@@ -12,9 +12,8 @@ public class MarkeServiceImpl implements MarkeService{
 	private MarkeRepository markeRepository;	
 
 @Override
-public String addMark(Iterable<MarkModel> marks) {
+public Iterable<MarkModel> addMark(Iterable<MarkModel> marks) {
 	
-markeRepository.saveAll(marks);
-	return "add mark";
+return markeRepository.saveAll(marks);
 }
 }

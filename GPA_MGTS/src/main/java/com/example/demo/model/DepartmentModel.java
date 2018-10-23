@@ -25,6 +25,9 @@ public class DepartmentModel {
 	@OneToMany(mappedBy="department")
 	@JsonIgnore
 	private List<DigreeProgramModel> digreeProgram =new ArrayList<>();
+	@ManyToOne
+	@JoinColumn(name="admin_id")
+	private Admin admin;
 	
 	public DepartmentModel() {
 		

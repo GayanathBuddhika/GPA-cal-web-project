@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -14,19 +15,23 @@ public class MarkModel {
 	private Integer id;
 	private String grade;
 	private double mark;
-	@OneToOne
-	@JoinColumn(name="studentSubjectId")
-	private StudentSubjectModel studentOfSubject;
+	@ManyToOne
+	@JoinColumn(name="studentSubject_Id")
+	private StudentSubjectModel studentSubject;
+	@ManyToOne
+	@JoinColumn(name="exam_id")
+	private Exam exam;
 	
 	public MarkModel() {}
 
-	
-	public MarkModel(Integer id, String grade, double mark, StudentSubjectModel studentOfSubject) {
+
+	public MarkModel(Integer id, String grade, double mark, StudentSubjectModel studentSubject,Exam exam) {
 		super();
 		this.id = id;
 		this.grade = grade;
 		this.mark = mark;
-		this.studentOfSubject = studentOfSubject;
+		this.studentSubject = studentSubject;
+		this.exam=exam;
 	}
 
 
@@ -48,13 +53,33 @@ public class MarkModel {
 	public void setMark(double mark) {
 		this.mark = mark;
 	}
-	public StudentSubjectModel getStudentOfSubject() {
-		return studentOfSubject;
-	}
-	public void setStudentOfSubject(StudentSubjectModel studentOfSubject) {
-		this.studentOfSubject = studentOfSubject;
+
+
+	public StudentSubjectModel getStudentSubject() {
+		return studentSubject;
 	}
 
+
+	public void setStudentSubject(StudentSubjectModel studentSubject) {
+		this.studentSubject = studentSubject;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
+	public Exam getExam() {
+		return exam;
+	}
+
+
+	public void setExam(Exam exam) {
+		this.exam = exam;
+	}
+	
+    
 	
 	
 }

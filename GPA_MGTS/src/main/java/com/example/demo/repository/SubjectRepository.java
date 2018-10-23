@@ -7,5 +7,5 @@ import com.example.demo.model.Subject;
 
 public interface SubjectRepository extends JpaRepository<Subject, Integer>{
 
-	public Iterable<Subject> findByDigreeProgaramIdAndYearIdAndSemId(Integer did, Integer yid, Integer sid);
+	//public Iterable<Subject> findByDigreeProgaramIdAndYearIdAndSemId(Integer did, Integer yid, Integer sid);
 }

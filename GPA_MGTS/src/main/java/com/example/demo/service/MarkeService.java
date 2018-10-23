@@ -4,5 +4,5 @@ import com.example.demo.model.MarkModel;
 
 public interface MarkeService {
 
-	public String addMark(Iterable<MarkModel> marks);
+	public Iterable<MarkModel> addMark(Iterable<MarkModel> marks);
 }

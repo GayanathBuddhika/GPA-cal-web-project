@@ -11,11 +11,11 @@ public class StudentSubjectServiceImpl implements StudentSubjectService{
     @Autowired 
 	private StudentSubjectRepository studentSubjectRepository;
 
-	@Override
-	public Iterable<StudentSubjectModel> getSubject(String  epnum) {
-		
-		return studentSubjectRepository.findByEpnum(epnum);
-	}
+//	@Override
+//	public Iterable<StudentSubjectModel> getSubject(String  epnum) {
+//		
+//		return studentSubjectRepository.findByEpnum(epnum);
+//	}
 
 	@Override
 	public Iterable<StudentSubjectModel> getEpnum(Integer subjectcode) {
