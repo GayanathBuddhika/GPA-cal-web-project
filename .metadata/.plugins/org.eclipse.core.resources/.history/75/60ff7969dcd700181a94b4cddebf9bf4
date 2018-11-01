@@ -1,0 +1,17 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class studentController {
+	@Autowired
+	private SubjectService subjectService;
+	@PostMapping("/api/students")
+	private Iterable<StudentModel> addStudents(@RequestBody Iterable<StudentModel> students){
+		return 
+	}
+
+}

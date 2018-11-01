@@ -22,6 +22,7 @@ public class DepartmentModel {
 	@ManyToOne
 	@JoinColumn(name="faculy_num")
 	private FacultyModel faculty;
+	
 	@OneToMany(mappedBy="department")
 	@JsonIgnore
 	private List<DigreeProgramModel> digreeProgram =new ArrayList<>();
