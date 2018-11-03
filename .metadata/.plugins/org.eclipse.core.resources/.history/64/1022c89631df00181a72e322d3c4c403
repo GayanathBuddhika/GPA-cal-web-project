@@ -14,12 +14,12 @@ import com.example.demo.service.SubjectService;
 public class SubjectController {
     @Autowired
 	private SubjectService subjectService;
-    @GetMapping("/api/digreeProgram/{did}/{yid}/{sid}")
-    public Iterable<Subject> getSubject(@PathVariable Integer did, @PathVariable Integer yid, @PathVariable Integer sid ){
-    	
-    return subjectService.getSubjects(did,yid,sid);
-    	
-    }
+//    @GetMapping("/digreeProgram/{did}/year/{yid}/sem/{sid}/subject")
+//    public Iterable<Subject> getSubject(@PathVariable Integer did, @PathVariable Integer yid, @PathVariable Integer sid ){
+//    	
+//    return subjectService.getSubjects(did,yid,sid);
+//    	
+//    }
  @PostMapping("/api/addSubject")
  public Iterable<Subject> addSubject(@RequestBody Iterable<Subject> subject){
 	 

@@ -13,7 +13,7 @@ public class SubjectServiceImpl implements SubjectService {
 	@Override
 	public Iterable<Subject> getSubjects(Integer did, Integer yid, Integer sid) {
 		// TODO Auto-generated method stub
-		return subjectRepository.findByDigreeProgramIdAndYearAndSem(did, yid, sid);
+		return subjectRepository.findByDigreeProgaramIdAndYearIdAndSemId(did, yid, sid);
 	}
     public Iterable<Subject> addSubjects(Iterable<Subject> subject){
     	return subjectRepository.saveAll(subject);

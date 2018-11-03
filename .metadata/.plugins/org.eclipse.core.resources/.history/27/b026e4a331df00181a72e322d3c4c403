@@ -8,6 +8,6 @@ public interface SubjectService {
 
 
 
-	Iterable<Subject> getSubjects(Integer did, Integer yid, Integer sid);
+	//Iterable<Subject> getSubjects(Integer did, Integer yid, Integer sid);
 
 }
