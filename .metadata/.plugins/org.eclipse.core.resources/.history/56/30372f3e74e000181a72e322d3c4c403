@@ -19,7 +19,8 @@ public class Exam {
 	private Integer id;
 	private Integer year;
 	private Integer sem;
-    private String date;  
+	 @JsonFormat(pattern="yyyy-MM-dd")
+     private Date date;  
 
 	private String badge;
 	@OneToMany(mappedBy="exam")
@@ -28,7 +29,7 @@ public class Exam {
 	public Exam() {
 		
 	}
-	public Exam(Integer id, Integer year, Integer sem, Date String, String badge, List<MarkModel> mark) {
+	public Exam(Integer id, Integer year, Integer sem, String date, String badge, List<MarkModel> mark) {
 		super();
 		this.id = id;
 		this.year = year;

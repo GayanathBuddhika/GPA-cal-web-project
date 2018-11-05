@@ -1,6 +1,5 @@
 package com.example.demo.model;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Exam {
@@ -19,8 +17,7 @@ public class Exam {
 	private Integer id;
 	private Integer year;
 	private Integer sem;
-    private String date;  
-
+	private String date;
 	private String badge;
 	@OneToMany(mappedBy="exam")
 	@JsonIgnore
@@ -28,7 +25,7 @@ public class Exam {
 	public Exam() {
 		
 	}
-	public Exam(Integer id, Integer year, Integer sem, Date String, String badge, List<MarkModel> mark) {
+	public Exam(Integer id, Integer year, Integer sem, String date, String badge, List<MarkModel> mark) {
 		super();
 		this.id = id;
 		this.year = year;
