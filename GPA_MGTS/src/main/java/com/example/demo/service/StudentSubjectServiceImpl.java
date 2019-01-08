@@ -17,10 +17,15 @@ public class StudentSubjectServiceImpl implements StudentSubjectService{
 //		return studentSubjectRepository.findByEpnum(epnum);
 //	}
 
-	@Override
-	public Iterable<StudentSubjectModel> getEpnum(Integer subjectcode) {
+	public StudentSubjectModel getstsub(Integer stsub, Integer subnum){
 		
-		return studentSubjectRepository.findBySubject(subjectcode);
+		return studentSubjectRepository.findByStudent_idAndSubject_id(stsub,subnum);
+	}
+
+	@Override
+	public Iterable<StudentSubjectModel> saveStsb(Iterable<StudentSubjectModel> studentSubject) {
+		// TODO Auto-generated method stub
+		return studentSubjectRepository.saveAll(studentSubject);
 	}
     
     

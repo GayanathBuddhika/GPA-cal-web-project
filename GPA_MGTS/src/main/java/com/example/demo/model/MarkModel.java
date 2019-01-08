@@ -14,44 +14,89 @@ public class MarkModel {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	private String grade;
-	private double mark;
+    private Integer year;
+    private Integer sem;
+	private String epnum;
+	private Integer credit;
+	
 	@ManyToOne
 	@JoinColumn(name="studentSubject_Id")
 	private StudentSubjectModel studentSubject;
-	@ManyToOne
-	@JoinColumn(name="exam_id")
-	private Exam exam;
+	
 	
 	public MarkModel() {}
 
 
-	public MarkModel(Integer id, String grade, double mark, StudentSubjectModel studentSubject,Exam exam) {
+	public MarkModel(Integer id, String grade, Integer year, Integer sem, String epnum, Integer credit,
+			StudentSubjectModel studentSubject) {
 		super();
 		this.id = id;
 		this.grade = grade;
-		this.mark = mark;
+		this.year = year;
+		this.sem = sem;
+		this.epnum = epnum;
+		this.credit = credit;
 		this.studentSubject = studentSubject;
-		this.exam=exam;
 	}
 
 
 	public Integer getId() {
 		return id;
 	}
-	public void setid(Integer id) {
+
+
+	public void setId(Integer id) {
 		this.id = id;
 	}
+
+
 	public String getGrade() {
 		return grade;
 	}
+
+
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
-    public double getMark() {
-		return mark;
+
+
+	public Integer getYear() {
+		return year;
 	}
-	public void setMark(double mark) {
-		this.mark = mark;
+
+
+	public void setYear(Integer year) {
+		this.year = year;
+	}
+
+
+	public Integer getSem() {
+		return sem;
+	}
+
+
+	public void setSem(Integer sem) {
+		this.sem = sem;
+	}
+
+
+	public String getEpnum() {
+		return epnum;
+	}
+
+
+	public void setEpnum(String epnum) {
+		this.epnum = epnum;
+	}
+
+
+	public Integer getCredit() {
+		return credit;
+	}
+
+
+	public void setCredit(Integer credit) {
+		this.credit = credit;
 	}
 
 
@@ -65,21 +110,5 @@ public class MarkModel {
 	}
 
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
-
-	public Exam getExam() {
-		return exam;
-	}
-
-
-	public void setExam(Exam exam) {
-		this.exam = exam;
-	}
-	
-    
-	
-	
 }

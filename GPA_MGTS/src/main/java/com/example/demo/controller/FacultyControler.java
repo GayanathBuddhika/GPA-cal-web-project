@@ -29,4 +29,5 @@ public class FacultyControler {
 	   return facultyService.getAFaculty(id);
    }
 	
+	
 }

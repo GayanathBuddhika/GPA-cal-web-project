@@ -17,5 +17,18 @@ public class StudentServiceImpl implements StudentService{
 		// TODO Auto-generated method stub
 		return studentRepository.saveAll(students);
 	}
+
+  @Override
+  public StudentModel getStudent(String epnum) {
+ 		// TODO Auto-generated method stub
+		return studentRepository.findByEpnum(epnum);
+	}
+
+@Override
+public Iterable<StudentModel> getAllStudents(String faculty, String department, String dpro, String badge) {
+	// TODO Auto-generated method stub
+	return studentRepository.findByFacultyAndDepartmentAndDproAndBadge(faculty,department,dpro,badge);
+
+}
 	
 }

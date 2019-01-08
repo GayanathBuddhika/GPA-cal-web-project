@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class StudentSubjectModel {
 	@Id
@@ -23,6 +25,7 @@ public class StudentSubjectModel {
 	@JoinColumn(name="student_id")
 	private StudentModel student;
 	@OneToMany(mappedBy="studentSubject")
+	@JsonIgnore
 	private List<MarkModel> mark=new ArrayList<>();
 	
 	public StudentSubjectModel() {

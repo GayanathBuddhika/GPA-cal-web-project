@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +22,12 @@ public class DepartmentControler {
 	public Iterable<DepartmentModel> getDepartment(@PathVariable Integer id){
 		
 		return departmentService.getDepartment(id);
+		
+	}
+    @GetMapping("/api/getdepartments/{id}")
+	public Optional<DepartmentModel>  getaDepartment(@PathVariable Integer id){
+		
+		return departmentService.department(id);
 		
 	}
    @PostMapping("/save") 

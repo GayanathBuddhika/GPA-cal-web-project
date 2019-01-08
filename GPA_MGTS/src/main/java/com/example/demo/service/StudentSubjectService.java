@@ -6,6 +6,9 @@ public interface StudentSubjectService {
 
 	//Iterable<StudentSubjectModel> getSubject(String epnum);
 
-	Iterable<StudentSubjectModel> getEpnum(Integer subjectcode);
+
+	Iterable<StudentSubjectModel> saveStsb(Iterable<StudentSubjectModel> studentSubject);
+
+	StudentSubjectModel getstsub(Integer stsub, Integer subnum);
 
 }

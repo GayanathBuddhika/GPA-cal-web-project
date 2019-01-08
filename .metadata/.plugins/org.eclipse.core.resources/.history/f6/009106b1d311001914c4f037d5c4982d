@@ -1,0 +1,90 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+@Entity
+public class MarkModel {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
+	private String grade;
+	private Integer attempt;
+	private String epnum;
+	
+	@ManyToOne
+	@JoinColumn(name="studentSubject_Id")
+	private StudentSubjectModel studentSubject;
+	
+	
+	public MarkModel() {}
+
+
+	public MarkModel(Integer id, String grade, Integer attempt, String epnum, StudentSubjectModel studentSubject) {
+		super();
+		this.id = id;
+		this.grade = grade;
+		this.attempt = attempt;
+		this.epnum = epnum;
+		this.studentSubject = studentSubject;
+	}
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
+	public String getGrade() {
+		return grade;
+	}
+
+
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+
+
+	public Integer getAttempt() {
+		return attempt;
+	}
+
+
+	public void setAttempt(Integer attempt) {
+		this.attempt = attempt;
+	}
+
+
+	public String getEpnum() {
+		return epnum;
+	}
+
+
+	public void setEpnum(String epnum) {
+		this.epnum = epnum;
+	}
+
+
+	public StudentSubjectModel getStudentSubject() {
+		return studentSubject;
+	}
+
+
+	public void setStudentSubject(StudentSubjectModel studentSubject) {
+		this.studentSubject = studentSubject;
+	}
+
+
+
+
+}

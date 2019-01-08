@@ -1,0 +1,29 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.MarkModel;
+import com.example.demo.model.StudentModel;
+import com.example.demo.service.MarkeService;
+@RestController
+public class MarkController {
+   @Autowired
+	private MarkeService markeService;
+	@PostMapping("/api/addMarks")
+	public Iterable<MarkModel> addMark(@RequestBody Iterable<MarkModel> marks) {
+		System.out.println("this is mark controller");
+		return markeService.addMark(marks);
+		
+	}
+	@GetMapping("/api/getmark/{epnum}")
+	private Iterable<MarkModel> getStudent(@PathVariable String epnum){
+		
+		return markeService.getMark(epnum);
+		
+	}
+}

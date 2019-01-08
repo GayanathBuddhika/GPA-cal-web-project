@@ -28,5 +28,17 @@ public class studentController {
 		String id = String.format("%04d", random.nextInt(10000));
 		return id;
 	}
+	@GetMapping("/api/getStudent/{epnum}")
+	private StudentModel getStudent(@PathVariable String epnum){
+		
+		return studentService.getStudent(epnum);
+		
+	}
+	@GetMapping("/api/getStudents/{faculty}/{department}/{dpro}/{badge}")
+	private Iterable<StudentModel> getStudents(@PathVariable String faculty, @PathVariable String department,@PathVariable String dpro,@PathVariable String badge ){
+		
+		return studentService.getAllStudents(faculty,department,dpro,badge);
+		
+	}
 
 }

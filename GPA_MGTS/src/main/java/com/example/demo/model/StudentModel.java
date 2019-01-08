@@ -18,9 +18,12 @@ public class StudentModel {
 	private Integer id;
 	private String name;
 	private String email;
-	private String ep_num;
+	private String epnum;
     private String  badge;
     private String login_num;
+    private String faculty;
+    private String department;
+    private String dpro;
     @OneToMany(mappedBy="student")
     @JsonIgnore
     private List<StudentSubjectModel> studentSubject= new ArrayList<>();
@@ -34,15 +37,18 @@ public class StudentModel {
 
 
 
-	public StudentModel(Integer id, String name, String email, String ep_num, String badge, String login_num,
-			List<StudentSubjectModel> studentSubject, List<Gpa> gpa) {
+	public StudentModel(Integer id, String name, String email, String epnum, String badge, String login_num,
+			String faculty, String department, String dpro, List<StudentSubjectModel> studentSubject, List<Gpa> gpa) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
-		this.ep_num = ep_num;
+		this.epnum = epnum;
 		this.badge = badge;
 		this.login_num = login_num;
+		this.faculty = faculty;
+		this.department = department;
+		this.dpro = dpro;
 		this.studentSubject = studentSubject;
 		this.gpa = gpa;
 	}
@@ -85,14 +91,14 @@ public class StudentModel {
 
 
 
-	public String getEp_num() {
-		return ep_num;
+	public String getEpnum() {
+		return epnum;
 	}
 
 
 
-	public void setEp_num(String ep_num) {
-		this.ep_num = ep_num;
+	public void setEpnum(String epnum) {
+		this.epnum = epnum;
 	}
 
 
@@ -121,6 +127,42 @@ public class StudentModel {
 
 
 
+	public String getFaculty() {
+		return faculty;
+	}
+
+
+
+	public void setFaculty(String faculty) {
+		this.faculty = faculty;
+	}
+
+
+
+	public String getDepartment() {
+		return department;
+	}
+
+
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+
+
+	public String getDpro() {
+		return dpro;
+	}
+
+
+
+	public void setDpro(String dpro) {
+		this.dpro = dpro;
+	}
+
+
+
 	public List<StudentSubjectModel> getStudentSubject() {
 		return studentSubject;
 	}
@@ -143,7 +185,8 @@ public class StudentModel {
 		this.gpa = gpa;
 	}
 
-	
+
+
 	
 	
 }
